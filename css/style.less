@@ -9,11 +9,31 @@ h1 {
   background-color: @link-color;
 }
 
+.no-select {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
 #homepage {
   padding-top: 3.5rem;
   
   #reminders-container {
     margin-top: 1.75rem;
+  }
+    
+  .state-icon {
+    margin-right: 1rem;
+  }
+    
+  input.hidden {
+    display: none;
+  }
+    
+  .list-group-item-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 139, 202);
   }
   
 }
