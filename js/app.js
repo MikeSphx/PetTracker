@@ -24,6 +24,26 @@ function manageDocsButtonClick() {
 // Setting up checklist
 
 function setupChecklist() {
+    loadChecklist();
+    stylizeChecklist();
+}
+
+function loadChecklist() {
+    $.getJSON( "ajax/../data/reminders.json", function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+            //items.push( "<li id='" + key + "'>" + val + "</li>" );
+            console.log(val);
+        });
+
+//        $( "<ul/>", {
+//            "class": "my-new-list",
+//            html: items.join( "" )
+//        }).appendTo( "body" );
+    });
+}
+
+function stylizeChecklist() {
     $('.list-group.checked-list-box .list-group-item').each(function () {
         var $widget = $(this),
         $checkbox = $('<input type="checkbox" class="hidden" />'),
@@ -64,9 +84,9 @@ function setupChecklist() {
 
             // Update the button's color
             if (isChecked) {
-                $widget.addClass(style + color + ' active');
+                $widget.addClass(style + color);
             } else {
-                $widget.removeClass(style + color + ' active');
+                $widget.removeClass(style + color);
             }
         }
 
