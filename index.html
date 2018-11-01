@@ -12,8 +12,36 @@
     <link rel="stylesheet/less" type="text/css" href="./css/style.less"/>
   </head>
 
-  <body>
-    <h1>Hello, world!</h1>
+  <body id="homepage">
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+      <a class="navbar-brand" href="#">Pet Tracker</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">5 Important Reminders</h1>
+      </div>
+      <div id="reminders-container" class="container">
+        <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
       
     <button id="health-log-button" class="btn btn-primary" type="submit">Health Log</button>
     <button id="manage-docs-button" class="btn btn-primary" type="submit">Manage Documents</button>

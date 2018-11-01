@@ -1,3 +1,69 @@
 h1 {
 
 }
+
+// Variables
+@link-color:        #428bca; // sea blue
+
+#navbar {
+    background-color: @link-color;
+}
+
+#homepage {
+    padding-top: 3.5rem;
+
+    #reminders-container {
+        margin-top: 1.75rem;
+    } 
+}
+
+#managedocs {
+    .btn {
+        background-color: @link-color; /* Blue background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+    }
+    .btn:hover {
+        background-color: darkcyan;
+    }
+    #page-title {
+        text-align: center;
+        font-size: 24pt;
+        padding-top: 3.5rem;
+    }
+
+    table {
+        padding: 0px !important;
+        margin: 0px !important;
+        text-align: center;
+    }
+
+    #bottom-buttons {
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px;
+
+        #bottom-button {
+            padding: 2px;
+        }
+    }
+
+    .close {
+        display: inline;
+        padding: auto !important;
+        margin: 0 !important;
+
+    }
+
+    .modal-title {
+        margin: auto auto;
+
+        padding-left: 25px;
+    }
+
+    .title {
+        align-content: center;
+    }
+}
