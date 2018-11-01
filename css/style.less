@@ -4,9 +4,24 @@ h1 {
 
 // Variables
 @link-color:        #428bca; // sea blue
+@secondary-color:   #448AFF;
 
 #navbar {
     background-color: @link-color;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 #homepage {
@@ -14,7 +29,29 @@ h1 {
 
     #reminders-container {
         margin-top: 1.75rem;
-    } 
+    }
+  
+    #reminders-container {
+        margin-top: 1.75rem;
+    }
+    
+    .state-icon {
+        margin-right: 1rem;
+    }
+    
+    input.hidden {
+        display: none;
+    }
+    
+    .list-group-item-primary {
+        color: rgb(255, 255, 255);
+        background-color: rgb(66, 139, 202);
+    }
+    
+    .list-group-item-custom {
+      color: rgb(255, 255, 255);
+      background-color: @secondary-color;
+    }
 }
 
 #managedocs {
