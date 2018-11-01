@@ -4,6 +4,7 @@ h1 {
 
 // Variables
 @link-color:        #428bca; // sea blue
+@secondary-color:   #448AFF;
 
 #navbar {
     background-color: @link-color;
@@ -34,6 +35,11 @@ h1 {
     .list-group-item-primary {
         color: rgb(255, 255, 255);
         background-color: rgb(66, 139, 202);
+    }
+  
+    .list-group-item-custom {
+        color: rgb(255, 255, 255);
+        background-color: @secondary-color;
     }
 }
 
