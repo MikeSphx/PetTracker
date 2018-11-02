@@ -1,25 +1,51 @@
-var x = $('.FAB__mini-action-button').find('.mini-action-button--hide').length * 60 + 60;
-
 $(document).ready(function(){
-    //Some code here
+    registerEventHandlers();
 });
 
-$('.FAB').hover(function(){
-	$('.FAB').height(x);
-}, function(){
-	$('.mini-action-button--show').attr('class', 'mini-action-button--hide');
-	$('.FAB').height(0);
-});
+function registerEventHandlers() {
+    $("#masterfab").click(fabClick);
+    $("#addMed").click(addMedClick);
+    $("#logSymp").click(logSympClick);
+}
 
-$('.mini-action-button').hover(function(){
-	$(this).find('.mini-action-button__text--hide').attr('class', 'mini-action-button__text--show');
-}, function(){
-	$(this).find('.mini-action-button__text--show').attr('class', 'mini-action-button__text--hide');
-});
+function fabClick() {
+    console.log('Clicked FAB'); 
+    if($(".backdrop").is(":visible")){
+			$(".backdrop").fadeOut(125);
+			$(".fab.child")
+				.stop()
+				.animate({
+					bottom	: $("#masterfab").css("bottom"),
+					opacity	: 0
+				},125,function(){
+					$(this).hide();
+				});
+		}else{
+			jQuery(".backdrop").fadeIn(125);
+			$(".fab.child").each(function(){
+				$(this)
+					.stop()
+					.show()
+					.animate({
+						bottom	: (parseInt($("#masterfab").css("bottom")) + parseInt($("#masterfab").outerHeight()) + 70 * $(this).data("subitem") - $(".fab.child").outerHeight()) + "px",
+						opacity	: 1
+					},125);
+			});
+		}
+}
 
-$('.FAB__action-button').hover(function(){
-	$(this).find('.action-button__text--hide').attr('class', 'action-button__text--show');
-	$('.mini-action-button--hide').attr('class', 'mini-action-button--show');
-}, function(){
-	$(this).find('.action-button__text--show').attr('class', 'action-button__text--hide');
-});
+function addMedClick() {
+    console.log('Clicked Add Medicine');
+    // Display modal for adding medicine
+    $('#medModal').on('show.bs.modal', function (event) {
+        var modal = $(this)
+        })
+}
+
+function logSympClick() {
+    console.log('Clicked Log Symptom');
+    // Display modal for adding a symptom
+    $('#sympModal').on('show.bs.modal', function (event) {
+        var modal = $(this)
+        })
+}
