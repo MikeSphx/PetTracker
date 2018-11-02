@@ -27,7 +27,7 @@ Website:
 http://mikesphx.github.io/index.html?fbclid=IwAR1U8X1i8J-e6q6QflVZkYnz-VggjceMYKv7COSl8kwQ1xfZmVdhS-bCMek
 
 Startup Instructions:
-Web protoype- no special startup or requirements needed just go visit the website link.
+Web prototype- no special startup or requirements needed just go visit the website link.
 
 Briefing:
 
