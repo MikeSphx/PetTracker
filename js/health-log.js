@@ -6,8 +6,13 @@ function registerEventHandlers() {
     $("#masterfab").click(fabClick);
     $("#addMed").click(addMedClick);
     $("#logSymp").click(logSympClick);
-    $("#save2").click(appendSympClick)
-    $("#save1").click(appendMedClick)
+    $("#save2").click(appendSympClick);
+    $("#save1").click(appendMedClick);
+    $('.nav-home').click(navHomeClick);
+}
+
+function navHomeClick() {
+    window.location = '../index.html';
 }
 
 function fabClick() {
