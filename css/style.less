@@ -3,8 +3,8 @@ h1 {
 }
 
 // Variables
-@link-color:        #428bca; // sea blue
-@secondary-color:   #448AFF;
+@link-color:        #21CAAE;//#428bca; // sea blue
+@secondary-color:   #24DAF0;//#448AFF;
 
 #navbar {
     background-color: @link-color;
@@ -45,7 +45,7 @@ h1 {
     
     .list-group-item-primary {
         color: rgb(255, 255, 255);
-        background-color: rgb(66, 139, 202);
+        background-color: @secondary-color;//rgb(66, 139, 202);
     }
     
     .list-group-item-custom {
@@ -56,7 +56,7 @@ h1 {
 
 #managedocs {
     .btn {
-        background-color: @link-color; /* Blue background */
+        background-color: @secondary-color;//@link-color; /* Blue background */
         border: none; /* Remove borders */
         color: white; /* White text */
         font-size: 16px; /* Set a font size */
@@ -106,7 +106,7 @@ h1 {
 }
 
 #healthlog {
-    @fab-color: #03A9F4;
+    @fab-color: @secondary-color;//#03A9F4;
     @fab-size: 64px;
     @fab-margin: 1 / 4 * 3 * @fab-size;
     @fab-child-size: 1 / 3 * 2 * @fab-size;
