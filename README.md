@@ -29,7 +29,7 @@ http://mikesphx.github.io/index.html?fbclid=IwAR1U8X1i8J-e6q6QflVZkYnz-VggjceMYK
 Startup Instructions:
 Web protoype- no special startup or requirements needed just go visit the website link.
 
-Breifing:
+Briefing:
 
 Hi, we’re designing PetTracker, a pet health tracker application, that will help pet owners with sick pets. It’s main functionalities are sending reminders to administer medication, logging symptoms, and managing your pet’s medical records.
 
