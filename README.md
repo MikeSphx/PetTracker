@@ -45,9 +45,9 @@ We will start the study with a few questions. After, you will be given a task to
 
 Tasks:
 
-Enter a symptom for tracking
-Check off a reminder telling you to give your pet medicine
-Exporting your pets medical history to give to a vet.
+1.Enter a symptom for tracking
+2.Check off a reminder telling you to give your pet medicine
+3.Exporting your pets medical history to give to a vet.
 
 
 
