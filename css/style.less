@@ -208,9 +208,16 @@ h1 {
         display: inline-block;
         cursor: default;
     }
+  
+    .fab span#plus-fab {
+        position: absolute;
+        top: -3px;
+        left: 20px;
+    }
 
     .fab span{
         vertical-align:middle;
+
     }
 
     .fab.child{
@@ -224,7 +231,7 @@ h1 {
 
     .black() when (lightness(@fab-color) > 50%){
         .fab{
-            color: #000;
+            color: #FFF;
         }
     }
 
@@ -254,8 +261,8 @@ h1 {
         left: 27%;
         height: 100px;
         width: 500px;
-        background-color: yellow;
-        border-radius: 50%;
+        background-color: #97fceb;
+        border-radius: 5%;
         margin-bottom: 20px
     }
 
@@ -293,5 +300,7 @@ h1 {
         text-align: center;
         font-size: 24pt;
         padding-top: 3.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
     }
 }

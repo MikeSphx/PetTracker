@@ -47,6 +47,7 @@ function addMedClick() {
     $('#medModal').on('show.bs.modal', function (event) {
         var modal = $(this)
         })
+    fabClick();
 }
 
 function logSympClick() {
@@ -55,6 +56,7 @@ function logSympClick() {
     $('#sympModal').on('show.bs.modal', function (event) {
         var modal = $(this)
         })
+    fabClick();
 }
 
 function appendSympClick() {
