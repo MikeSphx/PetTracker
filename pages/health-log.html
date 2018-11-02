@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     
     <link rel="stylesheet/less" type="text/css" href="../css/style.less"/>
+    
   </head>
+    
+
 
   <body id=healthlog>
         <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
@@ -29,6 +32,9 @@
         </nav>
 
         <div id="title">Health Logs</div>
+              
+        <h>
+        </h>
         
         <div class="oval">
             <div class="text-date">
@@ -63,7 +69,7 @@
                     <p>Symptom: drooling</p>
                 </div>
             </div>
-    </div>
+        </div>
       
     <div class="modal fade" id="medModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -75,8 +81,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="medicine-name" class="col-form-label">Medicine Name:</label>
-                            <input type="text" class="form-control" id="medicine-name">
+                            <label for="name" class="col-form-label">Medicine Name:</label>
+                            <input type="text" class="form-control" id="name">
                         </div>
                         <div class="form-group">
                             <label for="date" class="col-form-label">Date:</label>
@@ -86,7 +92,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-secondary" id= "save1" data-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>
@@ -102,8 +108,8 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="symptom-name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" id="symptom-name">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name">
                         </div>
                         <div class="form-group">
                             <label for="date" class="col-form-label">Date:</label>
@@ -114,7 +120,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-secondary" id="save2" data-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>

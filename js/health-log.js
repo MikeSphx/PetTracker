@@ -6,6 +6,8 @@ function registerEventHandlers() {
     $("#masterfab").click(fabClick);
     $("#addMed").click(addMedClick);
     $("#logSymp").click(logSympClick);
+    $("#save2").click(appendSympClick)
+    $("#save1").click(appendMedClick)
 }
 
 function fabClick() {
@@ -48,4 +50,20 @@ function logSympClick() {
     $('#sympModal').on('show.bs.modal', function (event) {
         var modal = $(this)
         })
+}
+
+function appendSympClick() {
+    console.log('append');
+    // Display modal for adding a symptom
+    var date = $("#sympModal #date").val().trim()
+    var name = $("#sympModal #name").val().trim()
+    $("h").prepend('<div class="oval"><div class="text-date"><p>'+date+'</p><div class="text-block"><p>Symptom:'+name+'</p></div></div></div>');
+}
+
+function appendMedClick() {
+    console.log('append');
+    // Display modal for adding a symptom
+    var date = $("#medModal #date").val().trim()
+    var name = $("#medModal #name").val().trim()
+    $("h").prepend('<div class="oval"><div class="text-date"><p>'+date+'</p><div class="text-block"><p>Symptom:'+name+'</p></div></div></div>');
 }
