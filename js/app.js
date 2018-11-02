@@ -9,12 +9,12 @@ function registerEventHandlers() {
     $('#health-log-button').click(healhLogButtonClick);
     $('#manage-docs-button').click(manageDocsButtonClick);
     $('#complete-task-button').click(completeTaskButtonClick);
+    $('.nav-home').click(navHomeClick);
 }
 
 function healhLogButtonClick() {
     console.log('Clicked health log button');
     window.location = './pages/health-log.html';
-    
 }
 
 function manageDocsButtonClick() {
@@ -34,6 +34,10 @@ function updateRemindersCount() {
     $('#reminder-num').text(numReminders);
 }
 
+function navHomeClick() {
+    window.location = './index.html';
+}
+
 // Setting up checklist
 
 function setupChecklist() {
@@ -41,8 +45,6 @@ function setupChecklist() {
         var items = [];
         $.each( data, function( key, val ) {
           //<li class="list-group-item no-select" data-color="custom">Cras justo odio</li>
-          
-            console.log(val);
             items.push('<li class="list-group-item no-select" data-color="custom">'+val.text+
                        '<span class="list-group-time">'+val.time+'</span></li>');
         });
