@@ -17,25 +17,49 @@ function registerEventHandlers() {
 }
 
 function saveReminderClick() {
-    console.log('Save Reminder Click');
     var note = $('#note-input')[0].value;
     var hour = $('#hour-input')[0].value;
     var min = $('#minute-input')[0].value;
     
+    
+    
     // TODO Input Verification
     
-    var reminder = new Object();
-    reminder.text = note;
-    reminder.time = hour.toString() + 'h ' + min.toString() + 'm';
-    reminder.mins = (parseInt(hour) * 60) + parseInt(min);
-    addToChecklist(reminder);
+    var noteValid = note !== '';
+    var hourValid = hour !== '' && parseInt(hour) >= 0;
+    var minValid = min !== '' && parseInt(min) >= 0 && parseInt(min) < 60;
     
-    $('#add-reminder-modal').modal('hide');
+    if (noteValid && hourValid && minValid) {
+        var reminder = new Object();
+        reminder.text = note;
+        reminder.time = hour.toString() + 'h ' + min.toString() + 'm';
+        reminder.mins = (parseInt(hour) * 60) + parseInt(min);
+        addToChecklist(reminder);
+    
+        $('#add-reminder-modal').modal('hide');
+    } else {
+        var invalidWarning = 'Invalid input: ';
+        var invalidInputs = [];
+        if (!noteValid) {
+            $('#note-input').effect("highlight", {color: '#ffa99b'}, 750);
+            invalidInputs.push('"' + note + '"');
+        }
+        if (!hourValid) {
+            $('#hour-input').effect("highlight", {color: '#ffa99b'}, 750);
+            invalidInputs.push('"' + hour + '"');
+        }
+        if (!minValid) {
+            $('#minute-input').effect("highlight", {color: '#ffa99b'}, 750);
+            invalidInputs.push('"' + min + '"');
+        }
+        invalidWarning += invalidInputs.join(', ');
+        $('#invalid-warning').text(invalidWarning);
+        $('#invalid-warning').show();
+    }
 }
 
 function addReminderClick() {
     console.log('Add Reminder Click');
-    
 }
 
 function healhLogButtonClick() {
@@ -49,11 +73,6 @@ function manageDocsButtonClick() {
 }
 
 function completeTaskButtonClick() { 
-//    $.each($('.list-group-item-custom'), function(key, val) {
-//        console.log(val);
-//        
-//    });
-    
     var removedIndices = [];
     
     // Grab the indices of all selected reminders
@@ -86,19 +105,28 @@ function navHomeClick() {
 // Setting up checklist
 
 function addToChecklist(reminder) {
+    $('ul.checked-list-box').html("");
+    $.each(reminders, function(key, val) {
+        val.added = false;
+    });
+    reminder.added = true;
     reminders.push(reminder);
     sortItemsByDate(reminders);
-    console.log(reminders);
     var items = [];
     var index = 0;
     $.each(reminders, function(key, val) {
-        items.push('<li class="list-group-item no-select" data-color="custom"index='+index+'>'+val.text+
+        var addedReminder = '';
+        if (val.added) {
+            addedReminder = 'id="added-reminder" ';
+        }
+        items.push('<li '+addedReminder+'class="list-group-item no-select" data-color="custom"index='+index+'>'+val.text+
            '<span class="list-group-time">'+val.time+'</span></li>');
         index = index + 1;
     });
     var itemsHTML = items.join("");
-    $('ul.checked-list-box').html("");
     $('ul.checked-list-box').append(itemsHTML);
+    //$('li.list-group-item').toggle('highlight');
+    $('#added-reminder').effect("highlight", {color: '#a3ffef'}, 1000);
     stylizeChecklist();
     updateRemindersCount();
 }
