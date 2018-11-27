@@ -31,7 +31,11 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-3 no-select"><span id="reminder-num">5</span> Important Reminders</h1>
+        <h1 class="display-3 no-select"><span id="reminder-num">5</span> Important Reminders
+        </h1>
+        <div class="d-flex align-items-end justify-content-end">
+          <button type="button" class="add-reminder btn btn-link" data-toggle="modal" data-target="#add-reminder-modal"><i class="fa fa-plus-square-o" aria-hidden="true"></i></button>
+        </div>
         <h5 class="no-select">Task<span class="time-left no-select">Time Left</span></h5>
       </div>
       
@@ -51,6 +55,49 @@
         </div>
         <div class="col-6">
           <button id="manage-docs-button" class="btn" type="submit"><i class="fa fa-file-text-o"></i> Manage Documents</button>
+        </div>
+      </div>
+    </div>
+      
+    <div class="modal fade" id="add-reminder-modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Reminder</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="note-form">
+            <div class="form-group row">
+              <label for="example-text-input" class="col-3 col-form-label">Note<span style="color:red"> *</span></label>
+              <div class="col-9">
+                <input class="form-control" type="text" value="" id="note-input">
+              </div>
+            </div>
+            </form>
+            <div style="margin-bottom: 15px;"><b>Time Left</b></div>
+            <form id="time-form">
+            <div class="form-group row">
+              <label for="example-search-input" class="col-3 col-form-label">Hour(s)</label>
+              <div class="col-9">
+                <input class="form-control" type="search" value="0" id="hour-input">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-search-input" class="col-3 col-form-label">Minute(s)</label>
+              <div class="col-9">
+                <input class="form-control" type="search" value="0" id="minute-input">
+              </div>
+            </div>
+            </form>
+            <div><span style="color:red">*</span> Required</div>
+          </div>
+          <div class="modal-footer">
+            <button id="save-reminder" type="button" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
         </div>
       </div>
     </div>
