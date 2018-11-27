@@ -30,7 +30,7 @@
 
         <div id="page-title">Manage Documents</div>
       
-        <div class="container table-container">
+        <div class="container table-container" id="table">
             <table class="table table-sm table-bordered">
                 <thead>
                     <tr>
@@ -182,18 +182,18 @@
                         <form>
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Name:</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <input type="text" class="form-control" id="name">
                             </div>
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Date:</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <input type="text" class="form-control" id="date">
                             </div>
                         </form>
                         <button type="button" class="btn btn-secondary">Scan Document</button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="save">Save</button>
                     </div>
                 </div>
             </div>
