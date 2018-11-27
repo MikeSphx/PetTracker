@@ -34,6 +34,9 @@ function saveReminderClick() {
         reminder.mins = (parseInt(hour) * 60) + parseInt(min);
         addToChecklist(reminder);
     
+        $('#note-input').val('');
+        $('#hour-input').val('');
+        $('#minute-input').val('');
         $('#add-reminder-modal').modal('hide');
     } else {
         var invalidWarning = 'Invalid input: ';
