@@ -20,9 +20,7 @@ function saveReminderClick() {
     var note = $('#note-input')[0].value;
     var hour = $('#hour-input')[0].value;
     var min = $('#minute-input')[0].value;
-    
-    
-    
+
     // TODO Input Verification
     
     var noteValid = note !== '';
