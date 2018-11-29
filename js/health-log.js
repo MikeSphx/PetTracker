@@ -72,5 +72,5 @@ function appendMedClick() {
     // Display modal for adding a symptom
     var date = $("#medModal #date").val().trim()
     var name = $("#medModal #name").val().trim()
-    $("h").prepend('<div class="oval"><div class="text-date"><p>'+date+'</p><div class="text-block"><p>Symptom:'+name+'</p></div></div></div>');
+    $("h").prepend('<div class="oval"><div class="text-date"><p>'+date+'</p><div class="text-block"><p>Med taken: '+name+'</p></div></div></div>');
 }
