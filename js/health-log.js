@@ -9,10 +9,15 @@ function registerEventHandlers() {
     $("#save2").click(appendSympClick);
     $("#save1").click(appendMedClick);
     $('.nav-home').click(navHomeClick);
+    $(".backdrop").click(backdropClick);
 }
 
 function navHomeClick() {
     window.location = '../index.html';
+}
+
+function backdropClick() {
+    fabClick();
 }
 
 function fabClick() {

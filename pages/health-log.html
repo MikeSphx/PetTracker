@@ -8,6 +8,7 @@
       
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
     <link rel="stylesheet/less" type="text/css" href="../css/style.less"/>
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
@@ -129,9 +130,9 @@
     </div>
       
     <div class="backdrop"></div>
-    <div class="fab child" data-subitem="1" id="addMed" data-toggle="modal" data-target="#medModal"><span>Add Medicine</span></div>
-    <div class="fab child" data-subitem="2" id="logSymp" data-toggle="modal" data-target="#sympModal"><span>Log Symptom</span></div>
-    <div class="fab" id="masterfab"><span>+</span></div>
+    <div class="fab child" data-subitem="1" id="addMed" data-toggle="modal" data-target="#medModal"><div id="add-medicine" class="fab-text">Add Medicine</div><i id="med-icon" class="fa fa-medkit fab-icon" aria-hidden="true"></i></div>
+    <div class="fab child" data-subitem="2" id="logSymp" data-toggle="modal" data-target="#sympModal"><div id="log-symptom" class="fab-text">Log Symptom</div><i id="steth-icon" class="fa fa-stethoscope fab-icon" aria-hidden="true"></i></div>
+    <div class="fab" id="masterfab"><span id="plus-text" class="no-select">+</span></div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
