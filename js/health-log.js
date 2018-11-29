@@ -1,5 +1,11 @@
 $(document).ready(function(){
     registerEventHandlers();
+    $('#editmedModal').on('shown.bs.modal', function (e) {
+        data_id = $(e.relatedTarget).data('myvalue');
+     });
+    $('#editsympModal').on('shown.bs.modal', function (e) {
+        data_id = $(e.relatedTarget).data('myvalue');
+     });
 });
 
 function registerEventHandlers() {
@@ -8,9 +14,15 @@ function registerEventHandlers() {
     $("#logSymp").click(logSympClick);
     $("#save2").click(appendSympClick);
     $("#save1").click(appendMedClick);
+    $("#remove").click(removeClick);
+    $("#edit1").click(editSympClick);
+    $("#edit2").click(editMedClick);
     $('.nav-home').click(navHomeClick);
     $(".backdrop").click(backdropClick);
 }
+
+var ctr = 5;
+
 
 function navHomeClick() {
     window.location = '../index.html';
@@ -76,7 +88,8 @@ function appendSympClick() {
     date = new Date(date);
     date = date.toLocaleDateString("en-US", options);
     var name = $("#sympModal #name").val().trim();
-    $("h").prepend('<div class="oval"><div class="text-date"><p>'+date+'</p><div class="text-block"><p><b>Symptom:</b> '+name+'</p></div></div></div>');
+    $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editmedModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
+    ctr++
 }
 
 function appendMedClick() {
@@ -88,5 +101,36 @@ function appendMedClick() {
     date = date.toLocaleDateString("en-US", options);
     var name = $("#sympModal #name").val().trim();
     var name = $("#medModal #name").val().trim();
-    $("h").prepend('<div class="oval"><div class="text-date"><p>'+date+'</p><div class="text-block"><p><b>Med taken:</b> '+name+'</p></div></div></div>');
+    $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Med taken:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editmedModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
+    ctr++
+}
+
+function removeClick(id) {
+    document.getElementById(id).remove();
+}
+
+function editSympClick(id) {
+    var options = { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' };
+    // Display modal for adding a symptom
+    var date = $("#editsympModal #new-date2").val().trim();
+    date = new Date(date);
+    date = date.toLocaleDateString("en-US", options);
+    var name = $("#editsympModal #name").val().trim();
+    var p = "p" + data_id;
+    var tempDate = "date" + data_id;
+    document.getElementById(p).innerHTML = "Symptom: " + name;
+    document.getElementById(tempDate).innerHTML = date;
+}
+
+function editMedClick(id) {
+    // Display modal for adding a symptom
+    var options = { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' };
+    var date = $("#editmedModal #new-date1").val().trim();
+    date = new Date(date);
+    date = date.toLocaleDateString("en-US", options);
+    var name = $("#editmedModal #name").val().trim();
+    var p = "p" + data_id;
+    var tempDate = "date" + data_id;
+    document.getElementById(p).innerHTML = "Med taken: " + name;
+    document.getElementById(tempDate).innerHTML = date;
 }
