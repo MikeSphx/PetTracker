@@ -169,6 +169,32 @@
                 </div>
             </div>
         </div>
+        
+        <div class="modal fade" id="camera" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Camera</h4>
+                        
+                    </div>
+                    <img class="modal-content" src="/res/black.png">
+                    <button class="btn" id="view-button" data-dismiss="modal" data-toggle="modal" data-target="#picture"> ||</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="picture" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Scanned Document:</h4>
+                    </div>
+                    <img class="modal-content" src="/res/doctors-note.jpg">
+                </div>
+            </div>
+        </div>
 
 
         <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
@@ -189,7 +215,7 @@
                                 <input type="text" class="form-control" id="date">
                             </div>
                         </form>
-                        <button type="button" class="btn btn-secondary">Scan Document</button>
+                        <button class="btn" id="view-button" data-dismiss="modal" data-toggle="modal" data-target="#camera">Scan Document<i class="fa fa-home"></i></button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

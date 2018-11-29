@@ -8,6 +8,7 @@ function registerEventHandlers() {
     $('#view-button').click(viewButtonClick);
     $('.nav-home').click(navHomeClick);
     $('#save').click(saveNew);
+    $('#scan').click(camera);
 }
 
 function navHomeClick() {
@@ -28,6 +29,12 @@ function addNewButtonClick() {
         })
 }
 
+function camera() {
+    console.log('Clicked camera'); 
+    $('#camera').on('show.bs.modal', function (event) {
+        var modal = $(this)
+        })
+}
 
 function exportButtonClick() {
     console.log('Clicked export');
