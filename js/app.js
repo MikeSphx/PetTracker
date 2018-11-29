@@ -66,6 +66,8 @@ function addReminderClick() {
 function healhLogButtonClick() {
     console.log('Clicked health log button');
     window.location = './pages/health-log.html';
+   
+    
 }
 
 function manageDocsButtonClick() {

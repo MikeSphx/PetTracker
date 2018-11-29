@@ -88,7 +88,7 @@ function appendSympClick() {
     date = new Date(date);
     date = date.toLocaleDateString("en-US", options);
     var name = $("#sympModal #name").val().trim();
-    $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editmedModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
+    $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editsympModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
     ctr++
 }
 
