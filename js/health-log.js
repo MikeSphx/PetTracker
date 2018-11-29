@@ -32,6 +32,8 @@ function fabClick() {
 				},125,function(){
 					$(this).hide();
 				});
+            $("#plus-text").show();
+            $("#undo-icon").hide();
 		}else{
 			jQuery(".backdrop").fadeIn(125);
 			$(".fab.child").each(function(){
@@ -43,6 +45,8 @@ function fabClick() {
 						opacity	: 1
 					},125);
 			});
+            $("#plus-text").hide();
+            $("#undo-icon").show();
 		}
 }
 
