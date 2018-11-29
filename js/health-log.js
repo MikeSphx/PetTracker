@@ -118,7 +118,7 @@ function editSympClick(id) {
     var name = $("#editsympModal #name").val().trim();
     var p = "p" + data_id;
     var tempDate = "date" + data_id;
-    document.getElementById(p).innerHTML = "Symptom: " + name;
+    document.getElementById(p).innerHTML = "<b>Symptom</b>: " + name;
     document.getElementById(tempDate).innerHTML = date;
 }
 
@@ -131,6 +131,6 @@ function editMedClick(id) {
     var name = $("#editmedModal #name").val().trim();
     var p = "p" + data_id;
     var tempDate = "date" + data_id;
-    document.getElementById(p).innerHTML = "Med taken: " + name;
+    document.getElementById(p).innerHTML = "<b>Med taken</b>: " + name;
     document.getElementById(tempDate).innerHTML = date;
 }
