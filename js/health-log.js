@@ -15,8 +15,6 @@ function registerEventHandlers() {
     $("#save2").click(appendSympClick);
     $("#save1").click(appendMedClick);
     $("#remove").click(removeClick);
-    $("#edit1").click(editSympClick);
-    $("#edit2").click(editMedClick);
     $('.nav-home').click(navHomeClick);
     $(".backdrop").click(backdropClick);
 }
@@ -96,7 +94,7 @@ function appendSympClick() {
     var invalidInputs = [];
     
     if (nameValid && dateValid) {
-        $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editmedModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
+        $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editsympModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
         ctr++;
         $('#symp-name').val('');
         $('#new-date2').val('');
@@ -164,6 +162,7 @@ function removeClick(id) {
 }
 
 function editSympClick(id) {
+    console.log("edit test");
     var options = { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' };
     // Display modal for adding a symptom
     var date = $("#editsympModal #edit-new-date2").val().trim();
@@ -189,6 +188,7 @@ function editSympClick(id) {
         $('#editsympModal #edit-name').val('');
         $('#editsympModal #edit-new-date2').val('');
         $('.invalid-warning').hide();
+        $('#editsympModal').modal('hide');
     } else {
         if (!validName) {
             $('#editsympModal #edit-name').effect("highlight", {color: '#ffa99b'}, 750);
@@ -228,10 +228,10 @@ function editMedClick(id) {
         document.getElementById(p).innerHTML = "<b>Med taken</b>: " + name;
         document.getElementById(tempDate).innerHTML = date;
         
-        $('#editsympModal #edit-med-name').val('');
-        $('#editsympModal #edit-new-date1').val('');
-        
+        $('#editmedModal #edit-med-name').val('');
+        $('#editmedModal #edit-new-date1').val('');
         $('.invalid-warning').hide();
+        $('#editmedModal').modal('hide');
     } else {
         if (!validName) {
             $('#editmedModal #edit-med-name').effect("highlight", {color: '#ffa99b'}, 750);
