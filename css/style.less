@@ -171,15 +171,29 @@ h1 {
 }
 
 #managedocs {
-    .btn {
+    #add-new-button {
+        margin-right: 2px;
+    }
+    #scanned-name {
+        margin-left: 10px;
+        padding-top: 5px;
+    }
+    .styled-btn {
         background-color: @secondary-color;//@link-color; /* Blue background */
         border: none; /* Remove borders */
         color: white; /* White text */
         font-size: 16px; /* Set a font size */
-        cursor: pointer; /* Mouse pointer on hover */
+         /* Mouse pointer on hover */
     }
-    .btn:hover {
+    .styled-btn:hover {
         background-color: darkcyan;
+        cursor: pointer;
+    }
+    .close-button {
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: auto !important;
     }
     #page-title {
         text-align: center;
@@ -209,7 +223,11 @@ h1 {
         display: inline;
         padding: auto !important;
         margin: 0 !important;
-
+        
+    }
+    
+    .modal-body {
+        padding-right: 30px;
     }
 
     .modal-title {
@@ -228,6 +246,23 @@ h1 {
     
     span:hover{
         cursor: pointer;
+    }
+    
+    .save-button {
+        border: none;
+        font-size: 16px; 
+        background-color: @link-color;
+        border-color: @link-color;
+        
+    }
+    
+    .save-button:hover {
+        background-color: #1dbaa0;
+        cursor: pointer;
+    }
+    
+    .required {
+        margin-top: 10px;
     }
 }
 

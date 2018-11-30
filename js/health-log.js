@@ -99,7 +99,7 @@ function appendSympClick() {
         $('#symp-name').val('');
         $('#new-date2').val('');
         $('#sympModal').modal('hide');
-        $('.invalid-warning').hide();
+        $('#sympModal .invalid-warning').hide();
     } else {
         if (!nameValid) {
             $('#symp-name').effect("highlight", {color: '#ffa99b'}, 750);
@@ -112,8 +112,8 @@ function appendSympClick() {
             invalidInputs.push('Date');
         }
         invalidWarning += invalidInputs.join(' and ');
-        $('.invalid-warning').text(invalidWarning);
-        $('.invalid-warning').show();
+        $('#sympModal .invalid-warning').text(invalidWarning);
+        $('#sympModal .invalid-warning').show();
     }
 }
 
@@ -139,7 +139,7 @@ function appendMedClick() {
         $('#med-name').val('');
         $('#new-date1').val('');
         $('#medModal').modal('hide');
-        $('.invalid-warning').hide();
+        $('#medModal .invalid-warning').hide();
     } else {
         if (!nameValid) {
             $('#med-name').effect("highlight", {color: '#ffa99b'}, 750);
@@ -152,8 +152,8 @@ function appendMedClick() {
             invalidInputs.push('Date');
         }
         invalidWarning += invalidInputs.join(' and ');
-        $('.invalid-warning').text(invalidWarning);
-        $('.invalid-warning').show();
+        $('#medModal .invalid-warning').text(invalidWarning);
+        $('#medModal .invalid-warning').show();
     }
 }
 
@@ -187,7 +187,7 @@ function editSympClick(id) {
         
         $('#editsympModal #edit-name').val('');
         $('#editsympModal #edit-new-date2').val('');
-        $('.invalid-warning').hide();
+        $('#editsympModal .invalid-warning').hide();
         $('#editsympModal').modal('hide');
     } else {
         if (!validName) {
@@ -201,8 +201,8 @@ function editSympClick(id) {
             invalidInputs.push('Date');
         }
         invalidWarning += invalidInputs.join(' and ');
-        $('.invalid-warning').text(invalidWarning);
-        $('.invalid-warning').show();
+        $('#editsympModal .invalid-warning').text(invalidWarning);
+        $('#editsympModal .invalid-warning').show();
     }
 }
 
@@ -230,7 +230,7 @@ function editMedClick(id) {
         
         $('#editmedModal #edit-med-name').val('');
         $('#editmedModal #edit-new-date1').val('');
-        $('.invalid-warning').hide();
+        $('#editmedModal .invalid-warning').hide();
         $('#editmedModal').modal('hide');
     } else {
         if (!validName) {
@@ -244,7 +244,7 @@ function editMedClick(id) {
             invalidInputs.push('Date');
         }
         invalidWarning += invalidInputs.join(' and ');
-        $('.invalid-warning').text(invalidWarning);
-        $('.invalid-warning').show();
+        $('#editmedModal .invalid-warning').text(invalidWarning);
+        $('#editmedModal .invalid-warning').show();
     }
 }
