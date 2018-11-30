@@ -94,7 +94,7 @@ function appendSympClick() {
     var invalidInputs = [];
     
     if (nameValid && dateValid) {
-        $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editsympModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
+        $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'><i class="fa fa-stethoscope fab-icon" aria-hidden="true"></i>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Symptom:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editsympModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
         ctr++;
         $('#symp-name').val('');
         $('#new-date2').val('');
@@ -133,7 +133,7 @@ function appendMedClick() {
     var invalidInputs = [];
     
     if (nameValid && dateValid) {
-        $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Med taken:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editmedModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
+        $("h").prepend('<div class="oval" id='+ctr+'><div class="text-date"><p id=date'+ctr+'><i class="fa fa-medkit fab-icon" aria-hidden="true"></i>'+date+'</p><div class="text-block"><p id=p'+ctr+'><b>Med taken:</b> '+name+'</p></div></div><div class="edit-block"><button type="button" class="btn btn-secondary" id= "edit3" data-toggle="modal" data-target="#editmedModal" data-myvalue="'+ctr+'">Edit</button> <button type="button" class="btn btn-secondary" id= "remove" onclick="removeClick('+ctr+')">Remove</button></div></div>');
         ctr++;
         
         $('#med-name').val('');
@@ -183,7 +183,7 @@ function editSympClick(id) {
         var p = "p" + data_id;
         var tempDate = "date" + data_id;
         document.getElementById(p).innerHTML = "<b>Symptom</b>: " + name;
-        document.getElementById(tempDate).innerHTML = date;
+        document.getElementById(tempDate).innerHTML = '<i class="fa fa-stethoscope fab-icon" aria-hidden="true"></i>'+date;
         
         $('#editsympModal #edit-name').val('');
         $('#editsympModal #edit-new-date2').val('');
@@ -226,7 +226,7 @@ function editMedClick(id) {
         var p = "p" + data_id;
         var tempDate = "date" + data_id;
         document.getElementById(p).innerHTML = "<b>Med taken</b>: " + name;
-        document.getElementById(tempDate).innerHTML = date;
+        document.getElementById(tempDate).innerHTML = '<i class="fa fa-medkit fab-icon" aria-hidden="true"></i>'+date;
         
         $('#editmedModal #edit-med-name').val('');
         $('#editmedModal #edit-new-date1').val('');

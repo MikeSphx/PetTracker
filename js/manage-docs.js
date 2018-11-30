@@ -84,7 +84,7 @@ function saveNew() {
     var invalidInputs = [];
     
     if (nameValid && dateValid) {
-        $('#table tbody').append('<tr> <th scope="row"> <button class="styled-btn btn" id="view-button" data-toggle="modal" data-target="#viewModal">View<i class="fa fa-home"></i></button></th><td>'+date+'</td><td>'+name+'</td><th scope="row"><button id="export-button" class="styled-btn btn btn-primary" data-toggle="modal" data-target="#exportModal">Export</button></th></tr>');
+        $('#table tbody').before('<tr> <th scope="row"> <button class="styled-btn btn" id="view-button" data-toggle="modal" data-target="#viewModal">View</button></th><td>'+date+'</td><td>'+name+'</td><th scope="row"><button id="export-button" class="styled-btn btn btn-primary" data-toggle="modal" data-target="#exportModal">Export</button></th></tr>');
         $('#newModal #name').val('');
         $('#newModal #date').val('');
         $('#newModal .invalid-warning').hide();
